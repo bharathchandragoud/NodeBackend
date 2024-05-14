@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 app.use("/api/places", placesRoutes); // => /api/places...
 app.use("/api/users", usersRoutes);
-app.use("/products", productRoutes);
+app.use("/api/products", productRoutes);
 
 app.use((req, res, next) => {
   const error = new HttpError("Could not find this route.", 404);
@@ -27,4 +27,4 @@ app.use((error, req, res, next) => {
   res.json({ message: error.message || "An unknown error occurred!" });
 });
 
-app.listen(5000);
+app.listen(5001);
